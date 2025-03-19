@@ -1,0 +1,4 @@
+React is library of js
+used for single page application
+created by jordan walke at facebook
+.

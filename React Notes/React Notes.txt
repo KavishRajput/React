@@ -1,0 +1,21 @@
+HMR-> hot module replacement 
+it is a feature in vite that updates module in a running app without reloading full page
+
+1 detect file changes
+    when you modify a file vite automatically detects the change 
+2 update only the affected modules
+    instread of reloading the full page vite update the modified file in the browser
+
+version 1.2.3(major version.minor version.patch version)
+
+
+
+In Function Name First letter should be Capitalized
+Function Name Must Be Same As File Name
+
+
+
+States in React
+Hooks In React ->Hooks are the built in function in react  used for manupulate the text
+
+
