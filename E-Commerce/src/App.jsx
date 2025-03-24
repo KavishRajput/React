@@ -1,16 +1,20 @@
 import { Cardsection } from "./Components/Cardsection"
 
-export default function App() {
+export default function App() { 
+  
+
   return (
     <>
     <div className="Cardsection">
-    <Cardsection />
-    <Cardsection />
-    <Cardsection />
-    <Cardsection />
-    <Cardsection />
-    <Cardsection />
-    <Cardsection />
+    {
+      filterdata.products.map((item,index)=>{
+        return (
+          <Cardsection data={item} key={index}/>
+
+        )
+
+      })
+    }
     </div>
     </>
   )

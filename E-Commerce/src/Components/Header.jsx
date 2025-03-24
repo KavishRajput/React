@@ -2,7 +2,10 @@ import '../App.css'
 import { Navsearchbar } from './Inputboxs'
 import { Logo } from './Logos'
 import { Navlist } from './Navlist'
+import { useState } from 'react'
 export const Header=()=>{
+
+    
     const container={
         display:'flex',
         justifyContent:'space-around',
@@ -16,7 +19,7 @@ export const Header=()=>{
         <>
         <div style={container}>
             <Logo />
-            <Navsearchbar />
+            <Navsearchbar searchdata={searchdata}/>
             <Navlist />
         </div>
         </>
