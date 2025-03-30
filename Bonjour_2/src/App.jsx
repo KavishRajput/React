@@ -37,7 +37,7 @@ const [products,setProducts] = useState([]);
     <Navbar />
     <Searchbar searchdata={searchdata} />
 
-    <div className="container"> 0
+    <div className="container"> 
     {
       filterdata.map((item,index)=>{
         return (

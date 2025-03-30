@@ -2,8 +2,6 @@ import '../App.css'
 import { Navsearchbar } from './Inputboxs'
 import { Logo } from './Logos'
 import { Navlist } from './Navlist'
-import '../data.js'
-import { array } from '../data.js'
 export const Header=()=>{
 
 
