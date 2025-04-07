@@ -1,7 +1,15 @@
-export const Searchbar=()=>{
+import { useState } from "react";
+export const Searchbar=({searchdata})=>{
+    const [searchTerm, setSearchTerm] = useState("");
+
+    function getvalue(e){
+      setSearchTerm(e.target.value);
+      console.log(e.target.value);
+    }
     return(
         <>
-        <input type="text" name="searchbar" id="searchbar" placeholder="Search..." className="bg-gray-50 rounded w-3xs p-1.5 ps-5 shadow-black shadow-sm caret-lime-900" />
+              <input type="search" name="search" id="search" value={searchTerm} onChange={getvalue} placeholder="Search"/>
+              <button onClick={()=>{searchdata(searchTerm)}}>Submit</button>
         </>
     )
 }
