@@ -10,6 +10,7 @@ import { Help } from './Pages/Help.jsx';
 import { Products } from './Pages/Products.jsx';
 import { Layout } from './Layout.jsx';
 import { createBrowserRouter,RouterProvider } from 'react-router';
+import { Login } from './Pages/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <Products />,
+      },
+      {
+        path: "Login",
+        element: <Login />,
       },
     ]
   },

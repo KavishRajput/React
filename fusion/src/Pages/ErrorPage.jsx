@@ -9,7 +9,7 @@ export const Errorpage=()=>{
                 <span>{error.status}</span>
                 <span>{error.statusText}</span>
             </div>
-        <p className="text-6xl text-black text-center mt-15">{error.error.message}</p>
+        <p className="text-6xl text-black text-center mt-15">{error.message}</p>
         </div>
         </>
     )

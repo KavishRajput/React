@@ -1,5 +1,9 @@
 import { NavLink } from "react-router"
-import { Searchbar } from "./Inputs"
+import { IoCart } from "react-icons/io5";
+import { FcLike } from "react-icons/fc";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { Profile } from "./Dropdown";
+
 
 export const Navbar=()=>{
     return(
@@ -13,6 +17,12 @@ export const Navbar=()=>{
                 <li className="hover:underline cursor-pointer hover:text-lime-300 "><NavLink to={"/contacts"}>contacts</NavLink></li>
                 <li className="hover:underline cursor-pointer hover:text-lime-300 "><NavLink to={"/help"}>help</NavLink></li>
             </ul>
+            <div className="flex justify-around w-60">
+            <IoCart color="white" size={40}/>
+            <FcLike color="white" size={40}/>
+            <RiAccountPinCircleFill color="white" size={40}/>
+            <Profile />
+            </div>
         </div>
 
 
