@@ -1,107 +1,61 @@
-import { useState } from "react"
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import { DevTool } from "@hookform/devtools";
 
-export const Login=()=>{
-    // const[username,setUsername]=useState();
-    // const[password,setPassword]=useState();
-    const [credentials, setCredentials] = useState({ username: "", password: "" ,Gender:"",
-        hobbies:[]
-    }); // username and password must be same as name in input field
-    // const {username,password}=credentials;
-    const handlecredentials=(e)=>{
-        const {name,value,type}=e.target
-        if(type=="radio"){
-            if(e.target.checked){
-                setCredentials((prevstate)=>{
-                    return({
-                        ...prevstate,
-                        [name]:value
-                    })
-                })
-            }
-        }
-        else if(type=="checkbox"){
-            console.log("checkbox")
-            if(e.target.checked){
-                setCredentials((prevstate)=>{
-                    return({
-                        ...prevstate,
-                        [name]:[ ...prevstate.hobbies, value ]
-                        })
-                        })
-
-            }
-            else{
-                setCredentials((prevstate)=>{
-                    return({
-                        ...prevstate,
-                        [name]:prevstate.hobbies.filter((v)=>value!==v)
-                        })
-                        })
-            }
-        }
-
-        // console.log(name,value)
-        else{
-        setCredentials((prevstate)=>{
-            return({
-                ...prevstate,
-                [name]:value
-            })
-        })
+export const Login = () => {
+    const {register,control,handleSubmit,formState}= useForm()
+    const loginsubmit=(data)=>{
+      console.log(data)
     }
-
-        console.log(credentials)
-    }
-    const loginsubmit=(e)=>{
-        e.preventDefault();
-        console.log(credentials);
-    }
-    return (
-        <>
-        <div>
-            <h1> Login Page</h1>
-            <form action={""} method="POST" onSubmit={loginsubmit}>
-                {/* Username Start */}
-                            <label>Username:</label>
+  return (
+    <>
+    <div>
+            <h1 className="text-4xl text-center my-3.5 font-serif"> Login Page</h1>
+            <form onSubmit={handleSubmit(loginsubmit)} method="POST"  className="border-2 border-lime-300 outline-4 outline-indigo-900 w-1/2 rounded m-auto my-5 font-serif p-6">
+                {/* email Start */}
+                            <label htmlFor="email" className="text-xl">Email</label>
                             <br />
-                            <input type="text" name="username" className="border-2" 
-                            // value={username}
-                             onChange={
-                                // (e)=>setUsername(e.target.value)
-                                handlecredentials
-                                }/>
-                {/* Username End */}
+                            <input type="text" {...register("email",{
+                              required:true,
+                              pattern:{
+                                value:/^\S+@\S+\.\S+$/,
+                                message:"Invalid Email"
+                              }
+                            })} 
+                            className="border-2 mb-4 rounded"
+                            />
+                            <span>{formState.errors.email?formState.errors.email.message:""}</span>
+                {/* email End */}
                 <br/>
                 {/* Password Start */}
-                            <label>Password:</label>
+                            <label htmlFor="password" className="text-xl">Password</label>
                             <br />
-                            <input type="password" name="password" className="border-2" 
-                            // value={password}
-                             onChange={
-                                // (e)=>setPassword(e.target.value)
-                                handlecredentials
-                                }/>
+                            <input type="password" {...register("password",{
+                              required:{
+                                value:true,
+                                message:"Password is required"
+                              },
+                              minLength: {
+                                value: 6,
+                                message: "The Password Length Must be Grater Than 6"
+                              },
+                              maxLength: {
+                                value: 20,
+                                message: "The Password Length Must be Less Than 20"
+                              }
+
+                            })} 
+                            className="border-2 mb-4 rounded"
+                            />
+                            <span>{formState.errors.password?formState.errors.password.message:""}</span>
+
                 {/* Password End */}
-                <br/>
-                {/* Gender Start */}
-                            <h2>Gender</h2>
-                            <input type="radio" name="Gender" id="male" value={"male"} onChange={handlecredentials}/>
-                            <label htmlFor="male">Male</label>
-                            <input type="radio" name="Gender" id="female" value={"female"} onChange={handlecredentials}/>
-                            <label htmlFor="female">Female</label>
-                {/* Gender End */}
-                <br/>
-                <h2>Hobbies</h2>
-                <input type="checkbox" name="hobbies" id="reading" value={"reading"} onChange={handlecredentials}/>
-                <label htmlFor="reading">Reading</label>
-                <input type="checkbox" name="hobbies" id="swimming" value={"swimming"} onChange={handlecredentials}/>
-                <label htmlFor="swimming">Swimming</label>
-                <input type="checkbox" name="hobbies" id="dancing" value={"dancing"} onChange={handlecredentials}/>
-                <label htmlFor="dancing">Dancing</label>
                 <br />
-                <button type="submit">Login</button>
+                <button type="submit" className="text-xl bg-gray-900 py-2 px-4 outline-1 outline-lime-300 rounded text-white flex">Login</button>
             </form>
         </div>
-        </>
-    )
+        <DevTool control={control} />
+    </>
+  )
 }
+

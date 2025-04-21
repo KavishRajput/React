@@ -52,6 +52,7 @@ export const Products=()=>{
         </div>
         <p className="leading-relaxed">{singleproduct.description}</p>
         <div className="flex mt-10">
+          <span className="text-3xl text-black font-bold relative -top-2.5">{`₹ ${singleproduct.price}`}</span>
           <span className="title-font font-medium text-2xl text-gray-900"></span>
           <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Buy</button>
           <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
@@ -62,6 +63,9 @@ export const Products=()=>{
     </div>
   </div>
 </section>
+<div>
+  <h1>Feedback</h1>
+</div>
         </>
     )
 }

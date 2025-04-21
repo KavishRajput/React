@@ -10,7 +10,18 @@ import { Help } from './Pages/Help.jsx';
 import { Products } from './Pages/Products.jsx';
 import { Layout } from './Layout.jsx';
 import { createBrowserRouter,RouterProvider } from 'react-router';
+import { Signin } from './Pages/Signin.jsx';
 import { Login } from './Pages/Login.jsx';
+import { Custom_Branding } from './Pages/Services_Sidebar/Custom_Branding.jsx';
+import { Emailsupport } from './Pages/Services_Sidebar/emailsupport.jsx';
+import { Faq } from './Pages/Services_Sidebar/faq.jsx';
+import { Fast_Shipping } from './Pages/Services_Sidebar/Fast_Shipping.jsx';
+import { Inventary_Management } from './Pages/Services_Sidebar/Inventary_Management.jsx';
+import { Livechat } from './Pages/Services_Sidebar/livechat.jsx';
+import { Product_Sourcing } from './Pages/Services_Sidebar/Product_Sourcing.jsx';
+import { Request_callback } from './Pages/Services_Sidebar/request_callback.jsx';
+import { Support } from './Pages/Services_Sidebar/Support.jsx';
+import { Cart } from './components/Cart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +30,7 @@ const router = createBrowserRouter([
     errorElement: <Errorpage />,
     children: [
       {
-        path: "",
+        path: "/",
         element: <App />,
       },
       {
@@ -33,6 +44,48 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
+        children:[
+          {
+            path:"services",
+            element: <Services />
+          },
+          {
+            path:"Custom_Branding",
+            element: <Custom_Branding />
+          },
+          {
+            path:"Emailsupport",
+            element: <Emailsupport />
+          },
+          {
+            path:"Faq",
+            element: <Faq />
+          },
+          {
+            path:"Fast_Shipping",
+            element: <Fast_Shipping />
+          },
+          {
+            path:"Inventary_Management",
+            element: <Inventary_Management />
+          },
+          {
+            path:"Livechat",
+            element: <Livechat />
+          },
+          {
+            path:"Product_Sourcing",
+            element: <Product_Sourcing />
+          },
+          {
+            path:"Request_callback",
+            element: <Request_callback />
+          },
+          {
+            path:"Support",
+            element: <Support />
+          }
+        ]
       },
       {
         path: "help",
@@ -43,8 +96,16 @@ const router = createBrowserRouter([
         element: <Products />,
       },
       {
-        path: "Login",
+        path: "signin",
+        element: <Signin />,
+      },
+      {
+        path: "login",
         element: <Login />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
     ]
   },
