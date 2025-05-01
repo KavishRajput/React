@@ -5,23 +5,31 @@ import { titles } from "./utills/titles";
 import { useLocation } from "react-router";
 import { Online } from "./components/online";
 import { useEffect } from "react";
+import { CartProvider } from "./utills/Context/CartContext"; // named import
+import {WishProvider} from "./utills/Context/wishContext"; // default import
+
 export const Layout = () => {
-  const Dynamictitles=()=>{
+  const Dynamictitles = () => {
     const location = useLocation();
-    useEffect(()=>{
+    useEffect(() => {
+      console.log(location.pathname);
+      document.title = titles[location.pathname] || "Fusion E-Commerce";
+    }, [location.pathname]);
 
-      console.log(location.pathname)
-      document.title=titles[location.pathname]
-    },[location.pathname])
+    return null;
+  };
 
-  }
   return (
     <>
-    <Online />
-    <Dynamictitles />
-    <Navbar />
-    <Outlet />
-    <Footer />
+      <Online />
+      <Dynamictitles />
+      <CartProvider>
+        <WishProvider>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </WishProvider>
+      </CartProvider>
     </>
-)
+  );
 };

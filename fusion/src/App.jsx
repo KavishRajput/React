@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Cards } from "./components/Cards";
 import { Loader } from "./components/Loader";
-import { Link } from "react-router";
+import { useContext } from "react"
+import { CartContext } from "./utills/Context/CartContext";
 import { Searchbar } from "./components/Inputs";
 import useCallApi from "./utills/useCallApi";
 
 export default function App() {
-
+  const {add_to_cart}=useContext(CartContext)
   const [products, setProducts] = useState([]);
   const [filterdata, setFilterdata] = useState([]);
   
@@ -60,9 +61,12 @@ export default function App() {
         ) : (
           filterdata.map((value, index) => {
           return(
-            <Link to={`/products/${value.id}`} key={value.id}>
-            <Cards data={value}/>
-            </Link>
+            <Cards data={value} key={value.id}>
+              <div className="flex items-center justify-center gap-10 mt-4">
+                <button className="p-1 bg-gray-900 text-white border-2 rounded-sm text-2xl px-10 hover:scale-110" onClick={()=>add_to_cart(value)}>Cart</button>
+                <button className="p-1 bg-gray-900 text-white border-2 rounded-sm text-2xl px-10 hover:scale-110">Buy</button>
+            </div>
+            </Cards>
           )
         })
         )}

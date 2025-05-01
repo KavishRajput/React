@@ -1,17 +1,22 @@
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { DevTool } from "@hookform/devtools";
+import { useContext } from 'react';
+import { CartContext } from '../utills/Context/CartContext';
 
 export const Login = () => {
+const{login}=useContext(CartContext)
+  const e=useForm()
+  console.log(e)
     const {register,control,handleSubmit,formState}= useForm()
     const loginsubmit=(data)=>{
       console.log(data)
+      login()
     }
   return (
     <>
     <div>
             <h1 className="text-4xl text-center my-3.5 font-serif"> Login Page</h1>
-            <form onSubmit={handleSubmit(loginsubmit)} method="POST"  className="border-2 border-lime-300 outline-4 outline-indigo-900 w-1/2 rounded m-auto my-5 font-serif p-6">
+            <form action={"App"} onSubmit={handleSubmit(loginsubmit)} method="POST"  className="border-2 border-lime-300 outline-4 outline-indigo-900 w-1/2 rounded m-auto my-5 font-serif p-6">
                 {/* email Start */}
                             <label htmlFor="email" className="text-xl">Email</label>
                             <br />

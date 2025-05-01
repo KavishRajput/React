@@ -1,6 +1,13 @@
+import { useState } from "react"
 import { Faq_Section } from "./Faq_Section"
 
 export const Faq_Wrapper=()=>{
+    const[faqindex,setFaqindex]=useState(null)
+    const handleindex=(index)=>{
+        setFaqindex((prev)=>{
+            return index === prev ? null : index;
+        })
+    }
     const faq=[
         {
             question:"1. What is Fusion?",
@@ -48,7 +55,10 @@ export const Faq_Wrapper=()=>{
         {
         faq.map((value,index)=>{
             return(
-                <Faq_Section {...value} key={index}/>
+                <Faq_Section {...value} key={index}
+                isopen={faqindex==index}
+                setIsopen={()=>handleindex(index)}
+                />
             )
         })
         }

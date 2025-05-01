@@ -21,7 +21,7 @@ import { Livechat } from './Pages/Services_Sidebar/livechat.jsx';
 import { Product_Sourcing } from './Pages/Services_Sidebar/Product_Sourcing.jsx';
 import { Request_callback } from './Pages/Services_Sidebar/request_callback.jsx';
 import { Support } from './Pages/Services_Sidebar/Support.jsx';
-import { Cart } from './components/Cart.jsx';
+import {Toaster} from 'react-hot-toast'
 
 const router = createBrowserRouter([
   {
@@ -45,10 +45,6 @@ const router = createBrowserRouter([
         path: "services",
         element: <Services />,
         children:[
-          {
-            path:"services",
-            element: <Services />
-          },
           {
             path:"Custom_Branding",
             element: <Custom_Branding />
@@ -103,10 +99,6 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
-      {
-        path: "cart",
-        element: <Cart />,
-      },
     ]
   },
 ]);
@@ -114,5 +106,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <Toaster  position="bottom-center"/>
   </StrictMode>,
 )

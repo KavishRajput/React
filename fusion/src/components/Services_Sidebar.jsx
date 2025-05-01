@@ -4,7 +4,7 @@ export const Services_Sidebar=()=>{
     return(
         <>
             {/* Sidebar Container */}
-        <div className="w-64 bg-gray-950 border-r border-gray-200 h-[92vh] p-4 shadow-md ">
+        <div className="w-64 bg-gray-950 border-r border-gray-200 h-auto p-4 shadow-md ">
           <h2 className="text-xl font-bold mb-4 text-white">Our Services</h2>
 
           <nav className="space-y-2">
