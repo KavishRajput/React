@@ -17,9 +17,9 @@ import { Emailsupport } from "./Pages/Services_Sidebar/Emailsupport.jsx"
 import { Faq } from './Pages/Services_Sidebar/Faq.jsx';
 import { Fast_Shipping } from './Pages/Services_Sidebar/Fast_Shipping.jsx';
 import { Inventary_Management } from './Pages/Services_Sidebar/Inventary_Management.jsx';
-import { Livechat } from './Pages/Services_Sidebar/livechat.jsx';
+import { Livechat } from './Pages/Services_Sidebar/Livechat.jsx';
 import { Product_Sourcing } from './Pages/Services_Sidebar/Product_Sourcing.jsx';
-import { Request_callback } from './Pages/Services_Sidebar/request_callback.jsx';
+import { Request_callback } from './Pages/Services_Sidebar/Request_callback.jsx';
 import { Support } from './Pages/Services_Sidebar/Support.jsx';
 import {Toaster} from 'react-hot-toast'
 
