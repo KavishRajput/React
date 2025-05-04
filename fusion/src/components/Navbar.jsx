@@ -25,7 +25,7 @@ export const Navbar = () => {
   return (
     <>
       <div className="bg-gray-900 flex items-center justify-around py-2 sticky top-0 z-10000">
-        <img src="..\src\images\Logo.png" alt="LOGO" />
+        <img src="../src/assets/Logo.png" alt="LOGO" />
         <ul className="text-white text-lg flex items-center justify-around capitalize w-100">
           <li className="hover:underline cursor-pointer text-lime-300">
             <NavLink to={"/"}>home</NavLink>
