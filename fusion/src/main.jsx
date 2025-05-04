@@ -14,7 +14,7 @@ import { Signin } from './Pages/Signin.jsx';
 import { Login } from './Pages/Login.jsx';
 import { Custom_Branding } from './Pages/Services_Sidebar/Custom_Branding.jsx';
 import { Emailsupport } from "./Pages/Services_Sidebar/Emailsupport.jsx"
-import { Faq } from './Pages/Services_Sidebar/faq.jsx';
+import { Faq } from './Pages/Services_Sidebar/Faq.jsx';
 import { Fast_Shipping } from './Pages/Services_Sidebar/Fast_Shipping.jsx';
 import { Inventary_Management } from './Pages/Services_Sidebar/Inventary_Management.jsx';
 import { Livechat } from './Pages/Services_Sidebar/livechat.jsx';
