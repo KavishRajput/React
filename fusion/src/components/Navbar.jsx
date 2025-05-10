@@ -11,7 +11,7 @@ import  {Wishlist} from "../Pages/Wishlist"
 import { useContext } from "react";
 import { Protectedcart } from "./Protectedcart";
 import logo from "../../public/assets/Logo.png"
-export const Navbar = () => {
+export const Navbar = () => { 
   // const cartCount = 3; 
   const obj=useContext(CartContext)
   const cart=obj.cart

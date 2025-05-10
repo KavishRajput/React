@@ -1,4 +1,5 @@
 import { NavLink } from "react-router"
+import about_img from '../images/about.jpg'
 
 export const About=()=>{
     return (
@@ -17,7 +18,7 @@ export const About=()=>{
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="flex justify-center items-center">
             <img
-              src="src/assets/about1.jpg"
+              src={about_img}
               alt="About us"
               className="rounded-lg shadow-lg w-full h-full"
             />
