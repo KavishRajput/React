@@ -1,5 +1,5 @@
 import { NavLink } from "react-router"
-import about_img from '../images/about.jpg'
+import about_img from "../../public/assets/about1.jpg"
 
 export const About=()=>{
     return (
