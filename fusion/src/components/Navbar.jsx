@@ -10,7 +10,7 @@ import { wishContext } from "../utills/Context/wishContext";
 import  {Wishlist} from "../Pages/Wishlist"
 import { useContext } from "react";
 import { Protectedcart } from "./Protectedcart";
-import logo from "../../src/assets/Logo.png"
+import logo from "../../public/assets/Logo.png"
 export const Navbar = () => { 
   // const cartCount = 3; 
   const obj=useContext(CartContext)
