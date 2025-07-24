@@ -1,0 +1,18 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+:root{
+  --primary-color: #ECDFCC;
+}
+.colorpickerwrapper{
+  display: flex;
+  float: right;
+  margin-right: 50px;
+}
+.Cardsection{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

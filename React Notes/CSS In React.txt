@@ -1,0 +1,14 @@
+Inline CSS
+
+we have to create object to use inline CSS
+
+in inline CSS kabab Case are Used Like text-transform:capitalize; are written as textTransform:capitalize;
+where 1st alhabet of second word is capitalize with no space between them
+
+const heading={
+    key:'value',
+}
+<h1 style={heading}>hii<h1/>
+
+
+<h1 style={{key:'value',}}>hii<h1/>

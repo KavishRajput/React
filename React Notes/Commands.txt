@@ -1,0 +1,10 @@
+create build cmd ->npm run  build
+create ignore file -> touch .gitignore (working in gitbash)
+create node_module Folder-> nmp i/npm install
+node --version -> to check node version
+npx npm-check-updates -> to check for updates
+npx npm-check-updates -u -> to update packages
+npm i -g bun -> to install bun package
+bun install react@rc -> to install latest version of react
+bun add react-icons->to install react-icons
+npm install react-icons->to install react-icons

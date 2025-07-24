@@ -1,0 +1,4 @@
+Strict Mode
+new feature in ecma script 5
+it run our application 2 times so console log print twice while development Mode 
+but in production mode it run only once so console log print only once

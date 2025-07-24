@@ -1,0 +1,2 @@
+hook named use effect is used to call api
+use efferct (()=>{},[]) 

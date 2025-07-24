@@ -1,0 +1,5 @@
+use context hook
+    steps 
+    1. crete context 
+    2. provide
+    3. consume (Usedata )
