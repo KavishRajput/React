@@ -1,4 +1,4 @@
-import { Input } from "../components/input";
+import { Input } from '../components/Input';
 import {List} from'../components/List'
 
 export const Form = () => {
