@@ -35,15 +35,14 @@ export const ApiProvider = ({ children }) => {
 
   useEffect(() => {
     getEmpdata();
-  }, []);
+  }, [filterdata]);
 
-  // 🔧 Called from dropdown in UI
   const filterbydepartment = (e) => {
-    const selected = e.target.value;
-    setDepartment(selected);
-  };
+  setDepartment(e.target.value);
+  // setPage(1); 
+};
 
-  // 🔁 Apply filter whenever department or employee changes
+
   useEffect(() => {
     if (department && department !== "departments") {
       const filtered = employee.filter((item) => item.department === department);
@@ -54,7 +53,7 @@ export const ApiProvider = ({ children }) => {
   }, [department, employee]);
 
   return (
-    <ApiContext.Provider value={{ filterdata, filterbydepartment, handleDeleteEmpData}}>
+    <ApiContext.Provider value={{ employee,filterdata,setFilterdata,setEmployee,filterbydepartment, handleDeleteEmpData}}>
       {children}
     </ApiContext.Provider>
   );

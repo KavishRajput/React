@@ -50,6 +50,7 @@ export const Dashboard = () => {
             <div className="my-auto ms-10">
               <p className="text-xl font-bold">Total Employees</p>
               <p className="font-bold">{filterdata.length}</p>
+              {console.log(JSON.stringify(filterdata))}
             </div>
           </div>
           <div className="bg-orange-500 w-full p-5 m-3 rounded flex">

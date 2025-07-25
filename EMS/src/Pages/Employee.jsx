@@ -4,15 +4,18 @@ import { EmpCard } from "../Components/EmpCard";
 import axios from "axios";
 
 export const Employee = () => {
-  const { filterdata,filterbydepartment,deleteempdata } = useContext(ApiContext);
-  const [page,setPage]=useState(1);
-  const [totalpages,setTotalpages]=useState(0);
+  const { filterdata,filterbydepartment,deleteempdata,setFilterdata,setEmployee } = useContext(ApiContext);
+  // const [page,setPage]=useState(1);
+  // const [totalpages,setTotalpages]=useState(0);
 
 const getPeginationEmpdata = async () => {  
     try {
-      const getpeginationresponse = await axios.get("https://ems-hiur.onrender.com/employees/?_page=1&_per_page=4");
+      const getpeginationresponse = await axios.get(`https://ems-hiur.onrender.com/employees`);
+      // /?_page=${page}&_per_page=4
       console.log(getpeginationresponse.data)
-      setTotalpages(getpeginationresponse.data.pages)
+      // setTotalpages(getpeginationresponse.data.pages)
+      setFilterdata(getpeginationresponse.data)
+      
     } catch (err) {
       console.error("Error fetching employee data:", err);
     }
@@ -47,11 +50,11 @@ const getPeginationEmpdata = async () => {
               )}
       </div>
 
-      <div className="mx-auto my-6">
+      {/* <div className="mx-auto my-6">
         <button className=" bg-blue-500 px-4 py-1 rounded disabled:bg-red-500" onClick={()=>setPage(page-1)} disabled={page==1?true:false}>Previous</button>
         <span className="mx-4">{page}</span>
         <button className="bg-blue-500 px-4 py-1 rounded disabled:bg-red-500" onClick={()=>setPage(page+1)} disabled={page==totalpages?true:false}>Next</button>
-      </div>
+      </div> */}
       </div>
     </>
   );
